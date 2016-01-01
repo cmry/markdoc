@@ -55,7 +55,7 @@ you need examples on how to structure these, just check the docstrings of
 `markdoc.py`. Some other caveats:
 
 - Do not use `"""` for anything other than docstrings.
-- First line of a any docstring has to contain the first short title ([example](https://github.com/cmry/markdoc/blob/master/markdoc.py#L1)).
+- First line of any docstring has to contain the first short title ([example](https://github.com/cmry/markdoc/blob/master/markdoc.py#L162)).
 - Classes have to be structured new-style: `class SomeClass(object):`.
 - Codeblocks in examples have to be vanilla python (`>>>` and `...`).
 - Please do not use `class` as a parameter name!
