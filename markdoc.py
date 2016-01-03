@@ -1,7 +1,7 @@
 """Docstring to Markdown.
 
 This piece of code is used within Shed (https://www.github.com/cmry/shed) to
-convert sklearn-styled python docstrings to markdown. In this way, only the
+convert NumPy-styled python docstrings to markdown. In this way, only the
 code documentation needs to be editted, and the readthedocs is automatically
 updated thereafter. To use it, simply type `python3 markdoc.py
 somefile.py somedoc.md`. Check class help for python usage. Don't forget to
@@ -89,11 +89,11 @@ class MarkDoc(object):
     class, you can just do:
 
     >>> from markdoc import MarkDoc
-    >>> d2m = MarkDoc('some/dir/file.py', '/some/otherdir/doc.md')
+    >>> md = MarkDoc('some/dir/file.py', '/some/otherdir/doc.md')
 
     The string of the markdown can be accessed by:
 
-    >>> print(d2m.markdown)
+    >>> print(md.markdown)
 
     Notes
     -----
