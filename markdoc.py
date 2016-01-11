@@ -28,7 +28,7 @@ ERR = '''
 - Class is not structed new-style (class SomeClass(object):)
 
 * Code blocks not showing
-- Code is in ipython style rather than vanilla (i.e. In [1]: instead of >>>)
+- Code is in IPython style rather than vanilla (i.e. In [1]: instead of >>>)
 
 * tuple index out of range
 - Mistake in var : type lists (for example var: type).
@@ -111,7 +111,7 @@ class MarkDoc(object):
     - Class is not structed new-style (object after class).
 
     #### Code blocks not showing?
-    - Code is ipython style rather than vanilla (i.e. In [1]: instead of >>>).
+    - Code is IPython style rather than vanilla (i.e. In [1]: instead of >>>).
 
     #### tuple index out of range?
     - Mistake in var : type lists (for example var: type).
@@ -132,7 +132,7 @@ class MarkDoc(object):
         # FIXME: code does not handle staticmethods yet?
 
     def read(self, file_in, file_out):
-        """Open python code file, spit out markdown file."""
+        """Open Python code file, spit out markdown file."""
         with open(file_in, 'r') as file_in:
             # get rid of special docstring parts
             classes = file_in.read().replace('r"""', '"""').split('\nclass ')
@@ -258,7 +258,7 @@ class MarkDoc(object):
         The documentation parts that are typed by 'var : type \n description'
         can be splitted into a table. The same holds true for a list of class
         methods. These are handled by this method. Table structures are on
-        the top of this python file.
+        the top of this Python file.
 
         Parameters
         ----------
@@ -366,7 +366,7 @@ class MarkDoc(object):
 
         In NumPy-style, each class is represented as it's name, along with
         the parameters accepted in `__init__` as its parameters, as you would
-        call the method in python. The markdown therefore needs to fill the
+        call the method in Python. The markdown therefore needs to fill the
         (object) tag that is assigned to classes with the `__init__` params.
 
         Parameters
@@ -454,7 +454,7 @@ class MarkDoc(object):
 
         This will piece together the descriptions contained in the docstring
         of the class. Currently, they are written *below* the top of the
-        python file, and not put into any subfiles per class.
+        Python file, and not put into any subfiles per class.
 
         Parameters
         ----------

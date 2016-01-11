@@ -29,7 +29,7 @@ to parse correctly.
 #### Better
 
 The styleguides are incorporated into two libraries that can be used to check
-the python files for style errors in terminal, like so:
+the Python files for style errors in terminal, like so:
 
 ``` shell
 pip install pep8
@@ -61,7 +61,7 @@ python3 markdoc.py /dir/to/somefile.py /dir/to/somedoc.md
 ```
 
 If you want to automatically generate a bunch of documentation and are not
-comfortable with writing `.sh` scripts, you can use the code in python as well:
+comfortable with writing `.sh` scripts, you can use the code in Python as well:
 
 ``` python
 from markdoc import MarkDoc
@@ -97,7 +97,7 @@ Some caveats:
 - First line of any docstring has to contain the first short title
   ([example](https://github.com/cmry/markdoc/blob/master/markdoc.py#L162)).
 - Classes have to be structured new-style: `class SomeClass(object):`.
-- Codeblocks in examples have to be vanilla python (`>>>` and `...`).
+- Codeblocks in examples have to be vanilla Python (`>>>` and `...`).
 - Please do not use `class` as a parameter name!
 
 ## Notes
