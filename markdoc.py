@@ -1,10 +1,10 @@
 """Docstring to Markdown.
 
-This piece of code is used within Shed (https://www.github.com/cmry/shed) to
-convert NumPy-styled python docstrings to markdown. In this way, only the
-code documentation needs to be editted, and the readthedocs is automatically
+This piece of code is used within [Shed](https://www.github.com/cmry/shed) to
+convert NumPy-styled Python docstrings to Markdown. In this way, only the
+code documentation needs to be editted, and the Readthedocs is automatically
 updated thereafter. To use it, simply type `python3 markdoc.py
-somefile.py somedoc.md`. Check class help for python usage. Don't forget to
+somefile.py somedoc.md`. Check class help for Python usage. Don't forget to
 also check the class notes (they are important for docstring format
 guidelines).
 """
@@ -61,9 +61,9 @@ class MarkDoc(object):
 
     r"""Documentation to Markdown.
 
-    This class converts a python file with properly formed sklearn-style
+    This class converts a Python file with properly formed NumPy-styled
     docstrings to a markdown file that can be used in for example Readthedocs
-    or jekyll.
+    or Jekyll.
 
     Parameters
     ----------
@@ -79,7 +79,7 @@ class MarkDoc(object):
     Attributes
     ----------
     markdown : str
-        The entire markdown file that will be appended to and written out.
+        The entire Markdown file that will be appended to and written out.
 
     Examples
     --------
@@ -218,7 +218,7 @@ class MarkDoc(object):
         Parameters
         ----------
         title_part : str
-            Part of the document that starts with triple qutoes and is below
+            Part of the document that starts with triple quotes and is below
             any line seperators.
 
         class_line : bool, optional, default False
@@ -324,10 +324,10 @@ class MarkDoc(object):
         Notes
         -----
         Please note that this method assumes markdown is uses so-called
-        fenced codeblocks that are commonly accepted by Readthedocs, Github,
+        fenced codeblocks that are commonly accepted by Readthedocs, GitHub,
         Bitbucket, and Jekyll (for example with Redcarpet).
 
-        This current implementation does NOT allow for ipython styled code
+        This current implementation does NOT allow for IPython styled code
         examples. (In [1]: Out[1]: etc.)
         """
         head = '\n\n------- \n\n##{1}\n\n{0}'
@@ -364,7 +364,7 @@ class MarkDoc(object):
     def md_class_method(self, doc, class_parts):
         """Replace `class ...(object)` with `__init__` arguments.
 
-        In sklearn-style, each class is represented as it's name, along with
+        In NumPy-style, each class is represented as it's name, along with
         the parameters accepted in `__init__` as its parameters, as you would
         call the method in python. The markdown therefore needs to fill the
         (object) tag that is assigned to classes with the `__init__` params.
@@ -396,6 +396,7 @@ class MarkDoc(object):
         init_doc = init_doc.replace('  ', '')
         init_doc = init_doc.replace(' def __init__(self, ', '(')
 
+        # FIXME: (object) screws up other class inherrits, make general regex
         return doc.replace('(object)', init_doc)
 
     def md_methods_doc(self, method_doc):
@@ -403,7 +404,7 @@ class MarkDoc(object):
 
         This method will scan each method docstring and extract parameters,
         returns and descriptions. It will append them to the method table
-        and link them in the doc (TODO).
+        and link (TODO) them in the doc.
 
         Parameters
         ----------
